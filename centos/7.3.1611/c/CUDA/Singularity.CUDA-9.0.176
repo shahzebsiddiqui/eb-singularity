@@ -4,7 +4,7 @@ From: shahzebsiddiqui/eb-singularity:centos-7.3.1611
 %post
 pip install easybuild -U
 su - easybuild 
-eb GCCcore-6.3.0.eb --robot --installpath=/app/ --prefix=/scratch --tmpdir=/scratch/tmp  --module-naming-scheme=EasyBuildMNS
+eb CUDA-9.0.176.eb --robot --installpath=/app/ --prefix=/scratch --tmpdir=/scratch/tmp  --module-naming-scheme=EasyBuildMNS
 exit
 rm -rf /scratch/tmp/*
 rm -rf /scratch/build
@@ -17,6 +17,6 @@ eval "$@"
 %environment
 source /etc/profile
 module use /app/modules/all/
-module load GCCcore/6.3.0
+module load CUDA/9.0.176
 
 %labels 

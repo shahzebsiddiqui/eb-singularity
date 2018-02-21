@@ -2,6 +2,7 @@ BootStrap: shub
 From: shahzebsiddiqui/eb-singularity:centos-7.3.1611
 
 %post
+pip install -U easybuild 
 su - easybuild 
 eb GCCcore-6.4.0.eb --robot --installpath=/app/ --prefix=/scratch --tmpdir=/scratch/tmp  --module-naming-scheme=EasyBuildMNS
 exit
