@@ -1,5 +1,5 @@
 Bootstrap: library
-From:  shahzebmsiddiqui/default/easybuild:1.0
+From:  shahzebmsiddiqui/default/easybuild:centos-7
 
 %post
 
@@ -22,7 +22,6 @@ EOF
 # cleanup, everything in /scratch is assumed to be temporary
 rm -rf /scratch/*
 
-cpumodel=$(grep -m 1 'model name' /proc/cpuinfo | sed 's/.*\://')
 %runscript
 eval "$@"
 
@@ -42,4 +41,3 @@ module use /app/modules/all
 module load bzip2/1.0.6
 
 %labels
- CPUMODEL echo $cpumodel
